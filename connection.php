@@ -21,11 +21,9 @@ if ($mysql->connect_error) {
   exit();
 }
 
-echo 'Success: A proper connection to MySQL was made.';
-echo '<br>';
-echo 'Host information: '.$mysql->host_info;
-echo '<br>';
-echo 'Protocol version: '.$mysql->protocol_version;
-
-//$mysql->close();
+// echo 'Success: A proper connection to MySQL was made.';
+// echo '<br>';
+// echo 'Host information: '.$mysql->host_info;
+// echo '<br>';
+// echo 'Protocol version: '.$mysql->protocol_version;
 ?>

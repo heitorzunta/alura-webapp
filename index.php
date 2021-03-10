@@ -1,8 +1,8 @@
 <?php
 require_once 'connection.php';
 
-include 'Artigo.php';
-$artigo = new Artigo($mysqli);
+include 'src/Artigo.php';
+$artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
 
 ?>
