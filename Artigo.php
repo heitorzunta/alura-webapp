@@ -1,3 +1,11 @@
+<?php
+require_once 'connection.php';
+require_once 'src/Artigo.php';
+
+$artigoConsulta = new Artigo($mysql);
+$artigo = $artigoConsulta->encontrarCorpoArtigo($_GET['id']);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,10 +18,10 @@
 <body>
     <div id="container">
         <h1>
-            Título
+            <?php echo $artigo['titulo'] ?>
         </h1>
         <p>
-            Conteúdo
+            <?php echo $artigo['conteudo'] ?>
         </p>
         <div>
             <a class="botao botao-block" href="index.php">Voltar</a>
