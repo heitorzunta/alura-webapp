@@ -1,6 +1,6 @@
 <?php
-require_once 'connection.php';
-require_once 'src/Artigo.php';
+require 'connection.php';
+require 'src/Artigo.php';
 
 $artigoConsulta = new Artigo($mysql);
 $artigo = $artigoConsulta->encontrarCorpoArtigo($_GET['id']);

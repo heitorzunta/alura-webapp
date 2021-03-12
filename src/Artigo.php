@@ -1,7 +1,5 @@
 <?php
 
-require_once 'connection.php';
-
 class Artigo {
 	private mysqli $mysql;
 
@@ -29,7 +27,7 @@ class Artigo {
 	}
 
 	public function adicionarArtigo(string $titulo, string $conteudo): void{
-		$sql = 'INSERT INTO artigo (titulo, conteudo) VALUES (?,?)';
+		$sql = 'INSERT INTO artigos (titulo, conteudo) VALUES (?,?)';
 		$requisicao = $this->mysql->prepare($sql);
 		$requisicao->bind_param('ss', $titulo, $conteudo);
 		$requisicao->execute();

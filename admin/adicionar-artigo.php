@@ -7,8 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$artigo = new Artigo($mysql);
 	$artigo->adicionarArtigo($_POST['titulo'], $_POST['conteudo']);
 
-	// header('Location: /blog/admin/index.php');
-	// die();
+	//POST REDIRECT GET
+	header('Location: adicionar-artigo.php');
+	die();
 }
 
 ?>
