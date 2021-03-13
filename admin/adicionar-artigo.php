@@ -1,17 +1,27 @@
 <?php
 
+// FUTURAMENTE IMPLEMENTAR AUTOLOAD
 require '../connection.php';
-require '../src/Artigo.php'; // esta dando erro!
+require '../src/Artigo.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$artigo = new Artigo($mysql);
 	$artigo->adicionarArtigo($_POST['titulo'], $_POST['conteudo']);
 
 	//POST REDIRECT GET
-	header('Location: adicionar-artigo.php');
-	die();
-}
 
+	/*
+		         O PRG Pattern (Post/Redirect/Get) é utilizado justamente para resolvermos este tipo de problema. Este padrão consiste basicamente em separar realmente o processamento das informações que chegam através do formulário, da página de resposta que será entregue ao cliente.
+
+		        Abaixo temos o mais simples que redireciona para uma pagina ja em GET
+
+	*/
+	//Este aqui e mais usual recarrega a mesma página em GET ou dispara um 303 caso nao encontre-a;
+	// header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+	// exit();
+    header('Location: ../admin/index.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

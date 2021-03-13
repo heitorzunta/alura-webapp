@@ -32,4 +32,12 @@ class Artigo {
 		$requisicao->bind_param('ss', $titulo, $conteudo);
 		$requisicao->execute();
 	}
+
+	public function removerArtigo(string $id): void
+	{
+		$sql = 'DELETE FROM artigos WHERE id like ?';
+		$requisicao = $this->mysql->prepare($sql);
+		$requisicao->bind_param('s', $id);
+		$requisicao->execute();
+	}
 }

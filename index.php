@@ -1,7 +1,7 @@
 <?php
 require_once 'connection.php';
-
 include 'src/Artigo.php';
+
 $artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
 
