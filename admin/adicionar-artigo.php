@@ -1,8 +1,9 @@
 <?php
 
 // FUTURAMENTE IMPLEMENTAR AUTOLOAD
-require '../connection.php';
+require '../services/connection.php';
 require '../src/Artigo.php';
+require '../services/redirection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$artigo = new Artigo($mysql);
@@ -19,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//Este aqui e mais usual recarrega a mesma página em GET ou dispara um 303 caso nao encontre-a;
 	// header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
 	// exit();
-    header('Location: ../admin/index.php');
-    exit();
+
+    Redirection::redirecionar('../admin/index.php');
 }
 ?>
 

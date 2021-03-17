@@ -1,15 +1,14 @@
 <?php
-require '../connection.php';
+require '../services/connection.php';
 require '../src/Artigo.php';
+require '../services/redirection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $artigo = new Artigo($mysql);
     $artigo->removerArtigo($_POST['id']);
 
-    header('Location: ../admin/index.php');
-    exit();
+    Redirection::redirecionar('../admin/index.php');
 }
-
 ?>
 
 

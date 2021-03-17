@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+require 'services/connection.php';
 require 'src/Artigo.php';
 
 $artigoConsulta = new Artigo($mysql);
@@ -21,7 +21,7 @@ $artigo = $artigoConsulta->encontrarCorpoArtigo($_GET['id']);
             <?php echo $artigo['titulo'] ?>
         </h1>
         <p>
-            <?php echo $artigo['conteudo'] ?>
+            <?php echo nl2br($artigo['conteudo']) ?>
         </p>
         <div>
             <a class="botao botao-block" href="index.php">Voltar</a>

@@ -1,5 +1,5 @@
 <?php
-require '../connection.php';
+require '../services/connection.php';
 require '../src/Artigo.php';
 
 $artigo = new Artigo($mysql);

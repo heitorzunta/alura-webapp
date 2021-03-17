@@ -40,4 +40,12 @@ class Artigo {
 		$requisicao->bind_param('s', $id);
 		$requisicao->execute();
 	}
+
+	public function editaArtigo(string $id, string $titulo, string $conteudo): void
+	{
+		$sql = 'UPDATE artigos SET titulo = ?, conteudo = ? WHERE id = ?';
+		$requisicao = $this->mysql->prepare($sql);
+		$requisicao->bind_param('sss', $titulo, $conteudo, $id);
+		$requisicao->execute();
+	}
 }
